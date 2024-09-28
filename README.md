@@ -9,6 +9,10 @@ $ CREATE DATABASE your_database_name;
 
 # Switch to the new database context:
 $ USE your_database_name;
+
+# You must insert a record with the admin role to be able to access the administrator panel.
+$ INSERT INTO users (name, document, email, password, phone, role)
+VALUES ('John Doe', '12345678', 'john.doe@example.com', 'securepassword', '123-456-7890', 'admin');
 ```
 
 
