@@ -127,7 +127,7 @@ export class UsersService {
     });
 
     if (!user) {
-      throw new HttpException('User not found', HttpStatus.NOT_FOUND);
+      throw new HttpException('User data does not match', HttpStatus.NOT_FOUND);
     }
 
     const balance = user?.wallets[0] ? user.wallets[0].value : 0;
@@ -164,7 +164,7 @@ export class UsersService {
     });
 
     if (!user) {
-      throw new HttpException('User not found', HttpStatus.NOT_FOUND);
+      throw new HttpException('User data does not match', HttpStatus.NOT_FOUND);
     }
 
     const wallet = user.wallets[0];

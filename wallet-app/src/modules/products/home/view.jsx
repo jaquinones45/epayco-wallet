@@ -44,21 +44,23 @@ const ProductsHomeView = () => {
     try {
       const wallet_id = user?.wallets[0]?.id;
       const { message } = await buyProduct({ user_id: user.id, wallet_id, product_id });
-      getAll();
       alert(message);
     } catch (error) {
       alert(error.response.data.message);
-    } 
+    } finally {
+      getAll();
+    }
   };
 
   const getConfirmPurchase = async (idSession, token, product_id) => {
     try {
       const wallet_id = user?.wallets[0]?.id;
       const { message } = await confirmPurchase({ idSession, token, user_id: user.id, wallet_id, product_id });
-      getAll();
       alert(message);
     } catch (error) {
       alert(error.response.data.message);
+    } finally {
+      getAll();
     }
   };
 

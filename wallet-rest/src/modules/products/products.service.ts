@@ -37,9 +37,7 @@ export const buyProduct = async (body: BuyProductDto): Promise<AxiosResponse<Buy
 }
 
 export const confirmPurchase = async (body: ConfirmPurchaseProductDto): Promise<AxiosResponse<ConfirmPurchaseProductDto>> => {
-  return await axios.post(`${BASE_URL}/products/confirm-purchase`, body);
+  const { data } = await axios.post(`${BASE_URL}/products/confirm-purchase`, body);
+  return data;
 }
 
-export const purchase = async (body: ConfirmPurchaseProductDto) => {
-  return await axios.post(`${BASE_URL}/products/purchase`, body);
-}

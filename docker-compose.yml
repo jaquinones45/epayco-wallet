@@ -1,0 +1,50 @@
+services:
+  mysql:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: wallet_db
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  wallet-api:
+    build:
+      context: ./wallet-api
+      dockerfile: Dockerfile
+    environment:
+      DB_HOST: mysql
+      DB_USER: user
+      DB_PASSWORD: password
+      DB_NAME: wallet_db
+    ports:
+      - "8082:8082"
+    depends_on:
+      - mysql
+
+  wallet-rest:
+    build:
+      context: ./wallet-rest
+      dockerfile: Dockerfile
+    environment:
+      PORT: 8081
+      API_URL: http://localhost:8082/api/v1
+    ports:
+      - "8081:8081"
+    depends_on:
+      - wallet-api
+
+  wallet-app:
+    build:
+      context: ./wallet-app
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    depends_on:
+      - wallet-rest
+
+volumes:
+  mysql_data:

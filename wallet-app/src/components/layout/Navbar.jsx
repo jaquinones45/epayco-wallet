@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../../assets/images/logo.png';
 
 import { useAuthStore } from '../../store';
 
@@ -15,7 +14,7 @@ const Navbar = () => {
 
   return (
     <nav className="flex items-center justify-between bg-zinc-800 p-4 relative">
-      <img src={logo} alt="Logo" className="h-12" />
+      <img src="/assets/images/logo.png" alt="Logo" className="h-12" />
       {
         user?.role === 'admin' && (
           <div className={`flex-col md:flex md:flex-row md:items-center md:space-x-4 absolute md:static bg-zinc-800 w-full md:w-auto transition-transform duration-300 ${isMenuOpen ? 'top-16' : '-top-96'}`}>
