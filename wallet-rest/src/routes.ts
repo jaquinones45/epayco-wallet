@@ -15,7 +15,6 @@ const server = () => {
   app.use('/api/users', userRouter);
   app.use('/api/products', productRouter);
 
-
   return app;
 };
 
