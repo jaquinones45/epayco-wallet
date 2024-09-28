@@ -20,6 +20,22 @@ $ npm install
 # .develop.env
 $ copy file .example.env for create .develop.env
 
+PORT=8080
+APP_NAME='epayco-wallet'
+PREFIX=api/v1
+
+DB_HOST=
+DB_PORT=
+DB_USER=
+DB_PASSWORD=
+DB_NAME=
+
+MAIL_HOST=
+MAIL_PORT=
+MAIL_USER=
+MAIL_PASS=
+MAIL_DEFAULT_FROM=
+
 # development
 $ npm run start:dev
 ```
@@ -31,6 +47,8 @@ $ npm install
 
 # .develop.env
 $ copy file .example.env for create .develop.env
+
+PORT=8081
 
 # development
 $ npm run start:dev
