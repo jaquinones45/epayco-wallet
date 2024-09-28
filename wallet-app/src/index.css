@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.bg-zinc-800 {
+  --tw-bg-opacity: 1;
+  background-color: #9ca3af;
+}

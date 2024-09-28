@@ -1,0 +1,48 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+    "@typescript-eslint"
+  ],
+  "extends": [
+    "airbnb-base",
+    "airbnb-typescript/base",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking"
+  ],
+  "parserOptions": {
+    "tsconfigRootDir": "./",
+    "project": [
+      "./tsconfig.dev.json"
+    ],
+    "sourceType": "module"
+  },
+  "ignorePatterns": [
+    "node_modules",
+    "coverage",
+    "lib"
+  ],
+  "rules": {
+    "max-len": ["warn", 120, 2, {
+      "ignoreUrls": true,
+      "ignoreComments": false,
+      "ignoreStrings": true
+    }],
+    "arrow-parens": ["error", "as-needed", { "requireForBlockBody": true }],
+    "@typescript-eslint/no-unsafe-argument": "error",
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "@typescript-eslint/no-misused-promises": ["error", {
+      "checksVoidReturn": { "variables": false }
+    }],
+    "import/prefer-default-export": "off",
+    "import/order": ["error", { "groups": [
+      "type",
+      "builtin",
+      "external",
+      "internal",
+      ["parent", "sibling", "index"],
+      "object"
+    ]}],
+    "require-await": "off"
+  }
+}

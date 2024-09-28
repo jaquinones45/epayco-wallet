@@ -1,0 +1,12 @@
+build
+node_modules
+
+.develop.env
+
+# Trash
+.DS_Store
+.idea
+.vscode
+
+# Coverage generated files
+coverage
