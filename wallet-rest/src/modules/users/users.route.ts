@@ -10,7 +10,7 @@ productRouter
       const response = await findAll();
       return res.status(200).json(response);
     } catch (e: any) {
-      return res.status(e.response.data.statusCode).json({ message: e.response.data.message });
+      return res.status(e?.response?.data?.statusCode).json({ message: e?.response?.data?.message });
     }
   })
   .get('/:id', async (req: Request, res: Response) => {
@@ -19,7 +19,7 @@ productRouter
       const response = await findById(Number(id));
       return res.status(200).json(response);
     } catch (e: any) {
-      return res.status(e.response.data.statusCode).json({ message: e.response.data.message });
+      return res.status(e?.response?.data?.statusCode).json({ message: e?.response?.data?.message });
     }
   })
   .post('/', async (req: Request, res: Response) => {
@@ -28,7 +28,7 @@ productRouter
       const response = await create(body);
       return res.status(200).json(response);
     } catch (e: any) {
-      return res.status(e.response.data.statusCode).json({ message: e.response.data.message });
+      return res.status(e?.response?.data?.statusCode).json({ message: e?.response?.data?.message });
     }
   })
   .post('/auth-login', async (req: Request, res: Response) => {
@@ -37,7 +37,7 @@ productRouter
       const response = await authLogin(body);
       return res.status(200).json(response);
     } catch (e: any) {
-      return res.status(e.response.data.statusCode).json({ message: e.response.data.message });
+      return res.status(e?.response?.data?.statusCode).json({ message: e?.response?.data?.message });
     }
   })
   .post('/balance', async (req: Request, res: Response) => {
@@ -46,7 +46,7 @@ productRouter
       const response = await balance(body);
       return res.status(200).json(response);
     } catch (e: any) {
-      return res.status(e.response.data.statusCode).json({ message: e.response.data.message });
+      return res.status(e?.response?.data?.statusCode).json({ message: e?.response?.data?.message });
     }
   })
   .post('/recharge-wallet', async (req: Request, res: Response) => {
@@ -55,7 +55,7 @@ productRouter
       const response = await rechargeWallet(body);
       return res.status(200).json(response);
     } catch (e: any) {
-      return res.status(e.response.data.statusCode).json({ message: e.response.data.message });
+      return res.status(e?.response?.data?.statusCode).json({ message: e?.response?.data?.message });
     }
   })
   .put('/:id', async (req: Request, res: Response) => {
@@ -65,7 +65,7 @@ productRouter
       const response = await update(Number(id), body);
       return res.status(200).json(response);
     } catch (e: any) {
-      return res.status(e.response.data.statusCode).json({ message: e.response.data.message });
+      return res.status(e?.response?.data?.statusCode).json({ message: e?.response?.data?.message });
     }
   })
   .delete('/:id', async (req: Request, res: Response) => {
@@ -74,7 +74,7 @@ productRouter
       const response = await remove(Number(id));
       return res.status(200).json(response);
     } catch (e: any) {
-      return res.status(e.response.data.statusCode).json({ message: e.response.data.message });
+      return res.status(e?.response?.data?.statusCode).json({ message: e?.response?.data?.message });
     }
   });
 

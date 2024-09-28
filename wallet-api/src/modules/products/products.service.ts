@@ -195,7 +195,6 @@ export class ProductsService {
     const wallet = buyData?.wallets[0];
     const buy = buyData?.buys[0];
 
-
     if (!buyData || buy.state !== StateProduct.PENDING)
       throw new HttpException(
         `There is no purchase for the product with id ${product_id}`,

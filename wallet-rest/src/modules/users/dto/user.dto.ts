@@ -1,12 +1,10 @@
 export type User = {
   id?: number;
   name: string;
-  description: string;
-  price: number;
-  quantity: number;
-  urlImage: string;
-  visible?: boolean;
-  user_id?: number;
+  document: number;
+  email: string;
+  password: string;
+  phone?: boolean;
   createdAt?: Date;
   updatedAt?: Date;
   deletedAt?: number;
