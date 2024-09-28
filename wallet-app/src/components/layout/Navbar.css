@@ -1,0 +1,66 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  background-color: #282c34;
+  padding: 1rem;
+  justify-content: space-between;
+  position: relative;
+}
+
+.navbar-logo {
+  height: 50px; /* Ajusta el tamaño según sea necesario */
+}
+
+.navbar-links {
+  display: flex;
+}
+
+.navbar-links a {
+  color: white;
+  text-decoration: none;
+  margin-right: 20px;
+  padding: 10px;
+  transition: background-color 0.3s;
+}
+
+.navbar-links a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+}
+
+.navbar-profile img {
+  height: 40px; /* Ajusta el tamaño según sea necesario */
+}
+
+/* Estilos para el botón de menú */
+.navbar-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+/* Media query para pantallas pequeñas */
+@media (max-width: 768px) {
+  .navbar-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px; /* Ajusta según el tamaño del navbar */
+    right: 0;
+    background-color: #282c34;
+    width: 100%;
+    z-index: 1;
+  }
+
+  .navbar-links.open {
+    display: flex;
+  }
+
+  .navbar-toggle {
+    display: block;
+  }
+}
+  
